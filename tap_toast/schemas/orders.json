@@ -1,0 +1,295 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "openedDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "modifiedDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "checks": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "openedDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "closedDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "modifiedDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "deletedDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "deleted": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "selections": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "properties": {
+                "quantity": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "deferred": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                },
+                "price": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "tax": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "voided": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                },
+                "voidDate": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "format": "date-time"
+                },
+                "createdDate": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "format": "date-time"
+                },
+                "modifiedDate": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "format": "date-time"
+                },
+                "fulfillmentStatus": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "displayName": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              }
+            }
+          },
+          "customer": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "properties": {
+              "firstName": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "lastName": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "phone": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "email": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            }
+          },
+          "amount": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "taxAmount": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "totalAmount": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "payments": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {}
+          },
+          "paymentStatus": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "paidDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "voidDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "voidBusinessDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "voided": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          }
+        }
+      }
+    },
+    "source": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "duration": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "numberOfGuests": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "voided": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "voidDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "paidDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "closedDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "deletedDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "deleted": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    }
+  }
+}
