@@ -43,8 +43,8 @@ class Toast(object):
         return self.host + path
 
 
-    # @backoff.on_exception(backoff.expo,
-    #                     requests.exceptions.RequestException)
+    @backoff.on_exception(backoff.expo,
+                        requests.exceptions.RequestException)
     def _post(self, url, **kwargs):
         if self.authorization_token is None:
             self.get_authorization_token()
@@ -55,8 +55,8 @@ class Toast(object):
         return response.json()
 
 
-    # @backoff.on_exception(backoff.expo,
-    #                     requests.exceptions.RequestException)
+    @backoff.on_exception(backoff.expo,
+                        requests.exceptions.RequestException)
     def _get(self, url, **kwargs):
         if self.authorization_token is None:
             self.get_authorization_token()
@@ -101,7 +101,7 @@ class Toast(object):
 
 
     def orders(self, column_name=None, bookmark=None):
-        one_year_ago = (datetime.today() - timedelta(days=50)).strftime(self.fmt_date)
+        one_year_ago = (datetime.today() - timedelta(days=365)).strftime(self.fmt_date)
         business_date = one_year_ago
         if bookmark is not None:
             business_date = bookmark.strftime(self.fmt_date)
@@ -113,11 +113,11 @@ class Toast(object):
                 yield order
 
 
-    def payments(self, column_name=None, bookmark=None):
+    # def payments(self, column_name=None, bookmark=None):
 
-        res = self._get(self._url('payments'), paidBusinessDate=business_date)
-        for item in res:
-            payment = self._get(self._url('payments/{payment_guid}'.format(payment_guid=item)))
-            yield payment
+    #     res = self._get(self._url('payments'), paidBusinessDate=business_date)
+    #     for item in res:
+    #         payment = self._get(self._url('payments/{payment_guid}'.format(payment_guid=item)))
+    #         yield payment
 
 
