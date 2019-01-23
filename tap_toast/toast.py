@@ -12,7 +12,7 @@ import logging
 import pytz
 import sys
 
-log = logging.getLogger()
+logger = logging.getLogger()
 utc = pytz.UTC
 
 
@@ -52,6 +52,7 @@ class Toast(object):
         header = { 'Authorization': 'Bearer ' + self.authorization_token, 'Toast-Restaurant-External-ID': self.location_guid, 'Content-Type': 'application/json' }
         response = requests.post(url, headers=header)
         response.raise_for_status()
+        logger.info('POST request successful at {url}'.format(url=url))
         return response.json()
 
 
@@ -64,6 +65,7 @@ class Toast(object):
         header = { 'Authorization': 'Bearer ' + self.authorization_token, 'Toast-Restaurant-External-ID': self.location_guid, 'Content-Type': 'application/json' }
         response = requests.get(url, headers=header, params=kwargs)
         response.raise_for_status()
+        logger.info('GET request successful at {url}'.format(url=url))
         return response.json()
 
 
@@ -76,6 +78,7 @@ class Toast(object):
         response = requests.post(self._url('usermgmt/v1/oauth/token'), data=payload)
         response.raise_for_status()
         res = response.json()
+        logger.info('Authorization successful.')
         self.authorization_token = res['access_token']
 
 
@@ -104,10 +107,12 @@ class Toast(object):
         one_year_ago = (datetime.today() - timedelta(days=365)).strftime(self.fmt_date)
         business_date = one_year_ago
         if bookmark is not None:
-            business_date = bookmark.strftime(self.fmt_date)
+            business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date)
 
         for single_date in daterange(utils.strptime_with_tz(business_date), datetime.now(pytz.utc)):
+            logger.info('Hitting endpoint at date {date}'.format(date=single_date))
             res = self._get(self._url('orders/v2/orders/'), businessDate=single_date.strftime(self.fmt_date))
+            logger.info('Returned {number} orders.'.format(number=len(res)))
             for item in res:
                 order = self._get(self._url('orders/v2/orders/{order_guid}'.format(order_guid=item)))
                 yield order
