@@ -29,7 +29,7 @@ You can get all of the below from talking to a sales representative at Toast (to
   "client_id": "***",
   "client_secret": "***",
   "location_guid": "***",
-  "start_date"
+  "start_date": "2018-11-12T11:00:30+00:00"
 }
 ```
 
