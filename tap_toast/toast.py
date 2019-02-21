@@ -26,17 +26,17 @@ def daterange(start_date, end_date):
 class Toast(object):
 
 
-    def __init__(self, client_id=None, client_secret=None, location_guid=None):
+    def __init__(self, client_id=None, client_secret=None, location_guid=None, start_date=None):
         """ Simple Python wrapper for the Toast API. """
         self.host = 'https://ws-sandbox-api.eng.toasttab.com/'
         self.client_id = client_id
         self.client_secret = client_secret
         self.location_guid = location_guid
+        self.start_date = utils.strptime_with_tz(start_date)
         self.grant_type = 'client_credentials'
         self.authorization_token = None
         self.fmt_date = '%Y%m%d'
         self.get_authorization_token()
-        # print(self.authorization_token)
 
 
     def _url(self, path):
@@ -104,8 +104,7 @@ class Toast(object):
 
 
     def orders(self, column_name=None, bookmark=None):
-        one_year_ago = (datetime.today() - timedelta(days=365)).strftime(self.fmt_date)
-        business_date = one_year_ago
+        business_date = (self.start_date).strftime(self.fmt_date)
         if bookmark is not None:
             business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date)
 

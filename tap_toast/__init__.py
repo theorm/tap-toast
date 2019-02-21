@@ -13,7 +13,8 @@ LOGGER = singer.get_logger()
 REQUIRED_CONFIG_KEYS = [
     "client_id",
     "client_secret",
-    "location_guid"
+    "location_guid",
+    "start_date"
 ]
 
 
@@ -85,7 +86,8 @@ def main():
     creds = {
         "client_id": parsed_args.config['client_id'],
         "client_secret": parsed_args.config['client_secret'],
-        "location_guid": parsed_args.config['location_guid']
+        "location_guid": parsed_args.config['location_guid'],
+        "start_date": parsed_args.config['start_date']
     }
     client = Toast(**creds)
 
