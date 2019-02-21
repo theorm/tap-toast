@@ -54,7 +54,6 @@ def ensure_credentials_are_authorized(client):
 def do_sync(client, catalog, state):
     ensure_credentials_are_authorized(client)
     selected_stream_names = get_selected_streams(catalog)
-    populate_class_schemas(catalog, selected_stream_names)
 
     for stream in catalog.streams:
         stream_name = stream.tap_stream_id
