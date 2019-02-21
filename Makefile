@@ -19,7 +19,7 @@ build:
 
 # Dev.
 dev:
-	@python3 setup.py develop
+	@pip3 install -e .
 
 # Deploy.
 release:

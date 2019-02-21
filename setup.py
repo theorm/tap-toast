@@ -10,7 +10,7 @@ setup(name='tap-toast',
       classifiers=['Programming Language :: Python :: 3 :: Only'],
       py_modules=['tap_toast'],
       install_requires=[
-          'singer-python==5.1.5',
+          'singer-python==5.4.1',
           'requests==2.20.0',
           'backoff==1.3.2'
       ],
