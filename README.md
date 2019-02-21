@@ -28,8 +28,25 @@ You can get all of the below from talking to a sales representative at Toast (to
 {
   "client_id": "***",
   "client_secret": "***",
-  "location_guid": "***"
+  "location_guid": "***",
+  "start_date"
 }
+```
+
+Toast is one of those companies where the API can only be accessed by talking to their sales team and signing an sales contract. Once the contract is in place, then their sales team will set up your account and email you the credentials necessary. **You will not be able to generate these keys on your own in the development portal.**
+
+Here is an example of the credentials that the Toast sales team will provide you:
+
+```
+client ID: your-client-id
+client secret: *FHHCsdqpme!@*$#
+location GUID: 93djm422-bdu4-mpt3-148s-34ctcm8mp4jf
+```
+
+The `start_date` is just the date you want the sync to begin. You can select this yourself.
+
+```
+start_date: 2018-11-12T11:00:30+00:00
 ```
 
 ### Discovery mode
