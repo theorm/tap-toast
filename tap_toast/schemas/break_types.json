@@ -1,0 +1,74 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "entityType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "duration": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "trackMissedBreaks": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "paid": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "active": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "breakIntervalHrs": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "breakIntervalMins": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "trackBreakAcknowledgement": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "enforceMinimumTime": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    }
+  }
+}

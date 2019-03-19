@@ -7,6 +7,8 @@ from tap_toast.toast import Toast
 from tap_toast.discover import discover_streams
 from tap_toast.sync import sync_stream
 from tap_toast.streams import STREAMS
+from tap_toast.context import Context
+
 
 LOGGER = singer.get_logger()
 
@@ -14,7 +16,8 @@ REQUIRED_CONFIG_KEYS = [
     "client_id",
     "client_secret",
     "location_guid",
-    "start_date"
+    "start_date",
+    "management_group_guid"
 ]
 
 
@@ -87,9 +90,12 @@ def main():
         "client_id": parsed_args.config['client_id'],
         "client_secret": parsed_args.config['client_secret'],
         "location_guid": parsed_args.config['location_guid'],
-        "start_date": parsed_args.config['start_date']
+        "start_date": parsed_args.config['start_date'],
+        "management_group_guid": parsed_args.config['management_group_guid']
     }
+
     client = Toast(**creds)
+    Context.config = parsed_args.config
 
     if parsed_args.discover:
         do_discover(client)

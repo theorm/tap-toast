@@ -1,0 +1,566 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "general": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "locationName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "locationCode": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "description": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "timeZone": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "closeoutHour": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "managementGroupGuid": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "urls": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "website": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "facebook": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "twitter": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "orderOnline": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "purchaseGiftCard": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "checkGiftCard": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "location": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "address1": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "address2": {
+          "type": [
+            "null",
+            ""
+          ]
+        },
+        "city": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "stateCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "zipCode": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "country": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "phone": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "latitude": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "longitude": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        }
+      }
+    },
+    "schedules": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "daySchedules": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "properties": {
+            "200000000115958788": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "properties": {
+                "scheduleName": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "services": {
+                  "type": [
+                    "null",
+                    "array"
+                  ],
+                  "items": {
+                    "type": [
+                      "null",
+                      "object"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": [
+                          "null",
+                          "string"
+                        ]
+                      },
+                      "hours": {
+                        "type": [
+                          "null",
+                          "object"
+                        ],
+                        "properties": {
+                          "startTime": {
+                            "type": [
+                              "null",
+                              "string"
+                            ]
+                          },
+                          "endTime": {
+                            "type": [
+                              "null",
+                              "string"
+                            ]
+                          }
+                        }
+                      },
+                      "overnight": {
+                        "type": [
+                          "null",
+                          "boolean"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "openTime": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "closeTime": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              }
+            },
+            "200000000115958792": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "properties": {
+                "scheduleName": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "services": {
+                  "type": [
+                    "null",
+                    "array"
+                  ],
+                  "items": {
+                    "type": [
+                      "null",
+                      "object"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": [
+                          "null",
+                          "string"
+                        ]
+                      },
+                      "hours": {
+                        "type": [
+                          "null",
+                          "object"
+                        ],
+                        "properties": {
+                          "startTime": {
+                            "type": [
+                              "null",
+                              "string"
+                            ]
+                          },
+                          "endTime": {
+                            "type": [
+                              "null",
+                              "string"
+                            ]
+                          }
+                        }
+                      },
+                      "overnight": {
+                        "type": [
+                          "null",
+                          "boolean"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "openTime": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "closeTime": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "weekSchedule": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "properties": {
+            "monday": {
+              "type": [
+                "null",
+                "number"
+              ]
+            },
+            "tuesday": {
+              "type": [
+                "null",
+                "number"
+              ]
+            },
+            "wednesday": {
+              "type": [
+                "null",
+                "number"
+              ]
+            },
+            "thursday": {
+              "type": [
+                "null",
+                "number"
+              ]
+            },
+            "friday": {
+              "type": [
+                "null",
+                "number"
+              ]
+            },
+            "saturday": {
+              "type": [
+                "null",
+                "number"
+              ]
+            },
+            "sunday": {
+              "type": [
+                "null",
+                "number"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "delivery": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "enabled": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "minimum": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "area": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "onlineOrdering": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "enabled": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "scheduling": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "specialRequests": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "specialRequestsMessage": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "paymentOptions": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "properties": {
+            "delivery": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "properties": {
+                "cash": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                },
+                "ccSameDay": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                },
+                "ccFuture": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                }
+              }
+            },
+            "takeout": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "properties": {
+                "cash": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                },
+                "ccSameDay": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                },
+                "ccFuture": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                },
+                "ccInStore": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                }
+              }
+            },
+            "ccTip": {
+              "type": [
+                "null",
+                "boolean"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "prepTimes": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "deliveryPrepTime": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "deliveryTimeAfterOpen": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "deliveryTimeBeforeClose": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "takeoutPrepTime": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "takeoutTimeAfterOpen": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "takeoutTimeBeforeClose": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "takeoutThrottlingTime": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "deliveryThrottlingTime": {
+          "type": [
+            "null",
+            "number"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "entityType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "serviceArea": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "guid": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "entityType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

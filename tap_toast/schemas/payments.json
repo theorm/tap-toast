@@ -1,0 +1,81 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "paidDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "cardEntryMode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "tipAmount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "amountTendered": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "cardType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "last4Digits": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "originalProcessingFee": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "refundStatus": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "paymentStatus": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

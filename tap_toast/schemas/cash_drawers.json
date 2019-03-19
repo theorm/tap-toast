@@ -1,0 +1,40 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "entityType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "printer": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "guid": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "entityType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "entityType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "externalId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "options": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "guid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "entityType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "externalId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    },
+    "minSelections": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "maxSelections": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

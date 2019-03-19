@@ -1,0 +1,47 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "date": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "undoes": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "employee": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "externalId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

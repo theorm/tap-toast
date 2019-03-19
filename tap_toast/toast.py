@@ -11,6 +11,7 @@ import requests
 import logging
 import pytz
 import sys
+import json
 
 logger = logging.getLogger()
 utc = pytz.UTC
@@ -25,18 +26,20 @@ def daterange(start_date, end_date):
 
 class Toast(object):
 
-
-    def __init__(self, client_id=None, client_secret=None, location_guid=None, start_date=None):
+    def __init__(self, client_id=None, client_secret=None, location_guid=None, management_group_guid=None, start_date=None):
         """ Simple Python wrapper for the Toast API. """
         self.host = 'https://ws-sandbox-api.eng.toasttab.com/'
         self.client_id = client_id
         self.client_secret = client_secret
         self.location_guid = location_guid
+        self.management_group_guid = management_group_guid
         self.start_date = utils.strptime_with_tz(start_date)
         self.grant_type = 'client_credentials'
         self.authorization_token = None
         self.fmt_date = '%Y%m%d'
+        self.default_page_size = 50
         self.get_authorization_token()
+        # print(self.authorization_token)
 
 
     def _url(self, path):
@@ -66,7 +69,13 @@ class Toast(object):
         response = requests.get(url, headers=header, params=kwargs)
         response.raise_for_status()
         logger.info('GET request successful at {url}'.format(url=url))
-        return response.json()
+        try:
+            res = response.json()
+            if isinstance(res, dict):
+                res = [res]
+        except ValueError:
+            res = []
+        return res
 
 
     def is_authorized(self):
@@ -83,45 +92,201 @@ class Toast(object):
 
 
     # column_name, bookmark
-    # def cash_management_entries(self, business_date):
-    #     res = self._get(self._url('cashmgmt/v1/entries'), businessDate=business_date)
-    #     for item in res:
-    #         yield res
+    def cash_management_entries(self, column_name=None, bookmark=None):
+        business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date)
+        for single_date in daterange(utils.strptime_with_tz(business_date), datetime.now(pytz.utc)):
+            logger.info('Hitting endpoint at date {date}'.format(date=single_date))
+            res = self._get(self._url('cashmgmt/v1/entries'), businessDate=single_date.strftime(self.fmt_date))
+            logger.info('Returned {number} entries.'.format(number=len(res)))
+            for item in res:
+                yield item
 
 
     # column_name, bookmark
-    # def cash_management_deposits(self, business_date):
-    #     res = self._get(self._url('cashmgmt/v1/deposits'), businessDate=business_date) 
-    #     for item in res:
-    #         yield res
+    def cash_management_deposits(self, column_name=None, bookmark=None):
+        business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date)
+        for single_date in daterange(utils.strptime_with_tz(business_date), datetime.now(pytz.utc)):
+            logger.info('Hitting endpoint at date {date}'.format(date=single_date))
+            res = self._get(self._url('cashmgmt/v1/deposits'), businessDate=single_date.strftime(self.fmt_date))
+            logger.info('Returned {number} deposits.'.format(number=len(res)))
+            for item in res:
+                yield item
 
 
     # full table sync
-    # def employees(self):
-    #     res = self._get(self._url('employees'))
-    #     for item in res:
-    #         yield res
+    def employees(self, column_name=None, bookmark=None):
+        res = self._get(self._url('labor/v1/employees'))
+        for item in res:
+            yield item
 
 
     def orders(self, column_name=None, bookmark=None):
-        business_date = (self.start_date).strftime(self.fmt_date)
-        if bookmark is not None:
-            business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date)
-
+        business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date)
         for single_date in daterange(utils.strptime_with_tz(business_date), datetime.now(pytz.utc)):
             logger.info('Hitting endpoint at date {date}'.format(date=single_date))
             res = self._get(self._url('orders/v2/orders/'), businessDate=single_date.strftime(self.fmt_date))
             logger.info('Returned {number} orders.'.format(number=len(res)))
             for item in res:
-                order = self._get(self._url('orders/v2/orders/{order_guid}'.format(order_guid=item)))
-                yield order
+                yield self._get(self._url('orders/v2/orders/{order_guid}'.format(order_guid=item)))[0]
 
 
-    # def payments(self, column_name=None, bookmark=None):
+    def payments(self, column_name=None, bookmark=None):
+        # cycle through paidBusinessDate, refundBusinessDate, and voidBusinessDate
+        business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date)
+        for single_date in daterange(utils.strptime_with_tz(business_date), datetime.now(pytz.utc)):
+            logger.info('Hitting endpoint at date {date}'.format(date=single_date))
+            paid_res = self._get(self._url('orders/v2/payments'), paidBusinessDate=single_date.strftime(self.fmt_date))
+            refund_res = self._get(self._url('orders/v2/payments'), refundBusinessDate=single_date.strftime(self.fmt_date))
+            void_res = self._get(self._url('orders/v2/payments'), voidBusinessDate=single_date.strftime(self.fmt_date))
+            res = paid_res + refund_res + void_res
+            logger.info('Returned {number} payments.'.format(number=len(res)))
+            for item in res:
+                yield self._get(self._url('orders/v2/payments/{payment_guid}'.format(payment_guid=item)))[0]
 
-    #     res = self._get(self._url('payments'), paidBusinessDate=business_date)
-    #     for item in res:
-    #         payment = self._get(self._url('payments/{payment_guid}'.format(payment_guid=item)))
-    #         yield payment
+
+    def alternate_payment_types(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/alternatePaymentTypes'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def break_types(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/breakTypes'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def cash_drawers(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/cashDrawers'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def dining_options(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/diningOptions'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def discounts(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/discounts'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def menu_groups(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/menuGroups'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def menu_items(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/menuItems'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def menu_option_groups(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/menuOptionGroups'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def menus(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/menus'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def no_sale_reasons(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/noSaleReasons'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def payout_reasons(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/payoutReasons'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def premodifier_groups(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/preModifierGroups'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def premodifiers(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/preModifiers'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def price_groups(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/priceGroups'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def printers(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/printers'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def restaurant_services(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/restaurantServices'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def revenue_centers(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/revenueCenters'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def sales_categories(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/salesCategories'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def service_areas(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/serviceAreas'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def tables(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/tables'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def tax_rates(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/taxRates'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def tip_withholding(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/tipWithholding'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def void_reasons(self, column_name=None, bookmark=None):
+        res = self._get(self._url('config/v2/voidReasons'), pageSize=self.default_page_size)
+        for item in res:
+            yield item
+
+
+    def restaurants(self, column_name=None, bookmark=None):
+        restaurant_ids = self._get(self._url('restaurants/v1/groups/{management_group_guid}/restaurants'.format(management_group_guid=self.management_group_guid)))
+        for restaurant_id in restaurant_ids:
+            restaurants = self._get(self._url('restaurants/v1/restaurants/{restaurant_guid}'.format(restaurant_guid=restaurant_id["guid"])))
+            for restaurant in restaurants:
+                yield restaurant
 
 

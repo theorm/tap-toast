@@ -1,0 +1,125 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "entityType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "externalId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "images": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {}
+    },
+    "visibility": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "unitOfMeasure": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "optionGroups": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "guid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "entityType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "externalId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    },
+    "calories": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "inheritUnitOfMeasure": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "inheritOptionGroups": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "orderableOnline": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "plu": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "sku": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

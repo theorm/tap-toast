@@ -1,0 +1,122 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "entityType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "externalId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "lastName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "wageOverrides": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {}
+    },
+    "firstName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "createdDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "deleted": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "deletedDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "jobReferences": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "guid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "entityType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "externalId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    },
+    "modifiedDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "disabled": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "externalEmployeeId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

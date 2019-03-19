@@ -1,0 +1,45 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "reason": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "date": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "undoes": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

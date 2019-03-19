@@ -1,0 +1,70 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "entityType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "parent": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "guid": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "entityType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "scalePrice": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "scaleFactor": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "displayMode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "basePrice": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    }
+  }
+}

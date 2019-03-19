@@ -1,0 +1,192 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "entityType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "externalId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "parent": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "guid": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "entityType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "externalId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "images": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {}
+    },
+    "visibility": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "unitOfMeasure": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "optionGroups": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "guid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "entityType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "externalId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    },
+    "menu": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "guid": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "entityType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "externalId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "inheritUnitOfMeasure": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "subgroups": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {}
+    },
+    "inheritOptionGroups": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "orderableOnline": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "items": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "guid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "entityType": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "externalId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

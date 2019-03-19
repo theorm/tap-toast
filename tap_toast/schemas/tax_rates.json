@@ -1,0 +1,64 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "entityType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "isDefault": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "conditionalTaxRates": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {}
+    },
+    "taxTable": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {}
+    },
+    "rate": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "roundingType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

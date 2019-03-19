@@ -1,0 +1,56 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "guid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "entityType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "amount": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "selectionType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "percentage": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "active": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}
