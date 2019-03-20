@@ -29,9 +29,14 @@ You can get all of the below from talking to a sales representative at Toast (to
   "client_id": "***",
   "client_secret": "***",
   "location_guid": "***",
+  "management_group_guid": "***"
   "start_date": "2018-11-12T11:00:30+00:00"
 }
 ```
+
+The `location_guid` is the primary id for the restaurant, which is necessary to access the API.
+
+The `management_group_guid` is the primary id for the restaurant group. It's required to get data on all restaurants within the group.
 
 Toast is one of those companies where the API can only be accessed by talking to their sales team and signing an sales contract. Once the contract is in place, then their sales team will set up your account and email you the credentials necessary. **You will not be able to generate these keys on your own in the development portal.**
 
@@ -121,9 +126,36 @@ Messages are written to standard output following the Singer specification. The 
 The streams that are incremental are:
 
 - orders
+- cash management deposits
+- cash management entries
+- payments
 
 ### Full Table
 
-None currently.
+- alternate payment
+- break types
+- cash drawers
+- dining options
+- discounts
+- employees
+- menu groups
+- menu items
+- menu option groups
+- menus
+- no sale reasons
+- payout reasons
+- premodifier groups
+- premodifiers
+- price groups
+- printers
+- restaurant services
+- restaurants
+- revenue centers
+- sales categories
+- service areas
+- tables
+- tax rates
+- tip withholding
+- void reasons
 
 Copyright &copy; 2018 Stitch
