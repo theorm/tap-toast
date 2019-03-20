@@ -119,7 +119,7 @@
         "address2": {
           "type": [
             "null",
-            ""
+            "string"
           ]
         },
         "city": {

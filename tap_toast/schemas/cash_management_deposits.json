@@ -10,10 +10,10 @@
         "string"
       ]
     },
-    "amount": {
+    "entityType": {
       "type": [
         "null",
-        "number"
+        "string"
       ]
     },
     "date": {
@@ -23,18 +23,106 @@
       ],
       "format": "date-time"
     },
+    "reason": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "payoutReason": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "cashDrawer": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "guid": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "entityType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
     "undoes": {
       "type": [
         "null",
         "string"
       ]
     },
-    "employee": {
+    "noSaleReason": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "employee1": {
       "type": [
         "null",
         "object"
       ],
       "properties": {
+        "guid": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "entityType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "externalId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "employee2": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "guid": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "entityType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
         "externalId": {
           "type": [
             "null",

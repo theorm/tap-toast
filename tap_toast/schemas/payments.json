@@ -10,23 +10,22 @@
         "string"
       ]
     },
-    "paidDate": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "format": "date-time"
-    },
-    "type": {
+    "entityType": {
       "type": [
         "null",
         "string"
       ]
     },
-    "cardEntryMode": {
+    "externalId": {
       "type": [
         "null",
         "string"
+      ]
+    },
+    "originalProcessingFee": {
+      "type": [
+        "null",
+        "number"
       ]
     },
     "amount": {
@@ -47,23 +46,31 @@
         "number"
       ]
     },
+    "cashDrawer": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "cardType": {
       "type": [
         "null",
         "string"
       ]
     },
-    "last4Digits": {
+    "lastModifiedDevice": {
       "type": [
         "null",
-        "string"
-      ]
-    },
-    "originalProcessingFee": {
-      "type": [
-        "null",
-        "number"
-      ]
+        "object"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
     },
     "refundStatus": {
       "type": [
@@ -71,7 +78,82 @@
         "string"
       ]
     },
+    "houseAccount": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "voidInfo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "otherPayment": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "mcaRepaymentAmount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "createdDevice": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "paidDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "cardEntryMode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "paymentStatus": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "paidBusinessDate": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "last4Digits": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "refund": {
       "type": [
         "null",
         "string"
