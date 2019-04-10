@@ -97,9 +97,6 @@ class Stream():
         res = get_data(self.replication_key, bookmark)
 
         for item in res:
-            print(item)
-            print(self.replication_key)
-
             if self.replication_method == "INCREMENTAL":
                 self.update_bookmark(state, item[self.replication_key])
             yield (self.stream, item)

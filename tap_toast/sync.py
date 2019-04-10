@@ -1,12 +1,9 @@
-import json
 
 import sys
 import singer
 import singer.metrics as metrics
 from singer import metadata
 from singer import Transformer
-
-logger = singer.get_logger()
 
 
 def sync_stream(state, instance):

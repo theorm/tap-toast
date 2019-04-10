@@ -18,6 +18,15 @@ utc = pytz.UTC
 
 
 
+def get_start_end_hour(start_date, end_date):
+    delta = timedelta(hours=1)
+    format_string = '%Y-%m-%dT%H:%M:%S.000-0400' # hard coding this timezone because it's too complicated
+    while start_date < end_date:
+        yield (start_date.strftime(format_string), (start_date + delta).strftime(format_string))
+        start_date += delta
+
+
+
 def daterange(start_date, end_date):
     for n in range(int ((end_date - start_date).days)):
         yield start_date + timedelta(n)
@@ -28,7 +37,7 @@ class Toast(object):
 
     def __init__(self, client_id=None, client_secret=None, location_guid=None, management_group_guid=None, start_date=None):
         """ Simple Python wrapper for the Toast API. """
-        self.host = 'https://ws-sandbox-api.eng.toasttab.com/'
+        self.host = 'https://ws-api.toasttab.com/'
         self.client_id = client_id
         self.client_secret = client_secret
         self.location_guid = location_guid
@@ -36,6 +45,7 @@ class Toast(object):
         self.start_date = utils.strptime_with_tz(start_date)
         self.grant_type = 'client_credentials'
         self.authorization_token = None
+        self.fmt_date_time = '%Y-%m-%dT%H:%M:%S.%Z'
         self.fmt_date = '%Y%m%d'
         self.default_page_size = 50
         self.get_authorization_token()
@@ -95,7 +105,7 @@ class Toast(object):
     def cash_management_entries(self, column_name=None, bookmark=None):
         business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date)
         for single_date in daterange(utils.strptime_with_tz(business_date), datetime.now(pytz.utc)):
-            logger.info('Hitting endpoint at date {date}'.format(date=single_date))
+            logger.info('Hitting cash management entries endpoint at datetime {date}'.format(date=single_date))
             res = self._get(self._url('cashmgmt/v1/entries'), businessDate=single_date.strftime(self.fmt_date))
             logger.info('Returned {number} entries.'.format(number=len(res)))
             for item in res:
@@ -106,7 +116,7 @@ class Toast(object):
     def cash_management_deposits(self, column_name=None, bookmark=None):
         business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date)
         for single_date in daterange(utils.strptime_with_tz(business_date), datetime.now(pytz.utc)):
-            logger.info('Hitting endpoint at date {date}'.format(date=single_date))
+            logger.info('Hitting cash management deposits endpoint at date {date}'.format(date=single_date))
             res = self._get(self._url('cashmgmt/v1/deposits'), businessDate=single_date.strftime(self.fmt_date))
             logger.info('Returned {number} deposits.'.format(number=len(res)))
             for item in res:
@@ -122,9 +132,9 @@ class Toast(object):
 
     def orders(self, column_name=None, bookmark=None):
         business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date)
-        for single_date in daterange(utils.strptime_with_tz(business_date), datetime.now(pytz.utc)):
-            logger.info('Hitting endpoint at date {date}'.format(date=single_date))
-            res = self._get(self._url('orders/v2/orders/'), businessDate=single_date.strftime(self.fmt_date))
+        for (start_hour, end_hour) in get_start_end_hour(utils.strptime_with_tz(business_date), datetime.now(pytz.utc)):
+            logger.info('Hitting orders endpoint at date {date}'.format(date=start_hour))
+            res = self._get(self._url('orders/v2/orders/'), startDate=start_hour, endDate=end_hour)
             logger.info('Returned {number} orders.'.format(number=len(res)))
             for item in res:
                 yield self._get(self._url('orders/v2/orders/{order_guid}'.format(order_guid=item)))[0]
