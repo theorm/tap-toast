@@ -20,7 +20,7 @@ utc = pytz.UTC
 
 def get_start_end_hour(start_date, end_date):
     delta = timedelta(hours=1)
-    format_string = '%Y-%m-%dT%H:%M:%S.000-0400' # hard coding this timezone because it's too complicated
+    format_string = '%Y-%m-%dT%H:%M:%S.000-0000' # hard coding this timezone because it's too complicated
     while start_date < end_date:
         yield (start_date.strftime(format_string), (start_date + delta).strftime(format_string))
         start_date += delta

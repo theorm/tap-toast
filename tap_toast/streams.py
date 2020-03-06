@@ -1,7 +1,7 @@
 
-# 
+#
 # Module dependencies.
-# 
+#
 
 import os
 import json
@@ -25,7 +25,7 @@ def get_abs_path(path):
 
 def needs_parse_to_date(string):
     if isinstance(string, str):
-        try: 
+        try:
             parse(string)
             return True
         except ValueError:
