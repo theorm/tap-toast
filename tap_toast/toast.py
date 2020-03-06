@@ -131,7 +131,7 @@ class Toast(object):
 
 
     def orders(self, column_name=None, bookmark=None):
-        business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date)
+        business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date_time)
         for (start_hour, end_hour) in get_start_end_hour(utils.strptime_with_tz(business_date), datetime.now(pytz.utc)):
             logger.info('Hitting orders endpoint at date {date}'.format(date=start_hour))
             res = self._get(self._url('orders/v2/orders/'), startDate=start_hour, endDate=end_hour)
