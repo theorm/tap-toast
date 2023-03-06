@@ -35,7 +35,7 @@ def daterange(start_date, end_date):
 
 class Toast(object):
 
-    def __init__(self, client_id=None, client_secret=None, location_guid=None, management_group_guid=None, start_date=None):
+    def __init__(self, client_id=None, client_secret=None, location_guid=None, management_group_guid=None, start_date=None, auth_with_login=False):
         """ Simple Python wrapper for the Toast API. """
         self.host = 'https://ws-api.toasttab.com/'
         self.client_id = client_id
@@ -44,6 +44,8 @@ class Toast(object):
         self.management_group_guid = management_group_guid
         self.start_date = utils.strptime_with_tz(start_date)
         self.grant_type = 'client_credentials'
+        self.user_access_type = 'TOAST_MACHINE_CLIENT'
+        self.auth_with_login = auth_with_login
         self.authorization_token = None
         self.fmt_date_time = '%Y-%m-%dT%H:%M:%S.%Z'
         self.fmt_date = '%Y%m%d'
@@ -93,12 +95,22 @@ class Toast(object):
 
 
     def get_authorization_token(self):
+        if self.auth_with_login:
+            return self.get_authorization_token_with_login()
         payload = { 'grant_type': self.grant_type, 'client_id': self.client_id, 'client_secret': self.client_secret }
-        response = requests.post(self._url('usermgmt/v1/oauth/token'), data=payload)
+        response = requests.post(self._url('authentication/v1/authentication/login'), data=payload)
         response.raise_for_status()
         res = response.json()
         logger.info('Authorization successful.')
         self.authorization_token = res['access_token']
+
+    def get_authorization_token_with_login(self):
+        payload = { 'userAccessType': self.user_access_type, 'clientId': self.client_id, 'clientSecret': self.client_secret }
+        response = requests.post(self._url('usermgmt/v1/oauth/token'), data=payload)
+        response.raise_for_status()
+        res = response.json()
+        logger.info('Authorization successful.')
+        self.authorization_token = res['token']['accessToken']
 
 
     # column_name, bookmark
