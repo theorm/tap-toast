@@ -145,8 +145,9 @@ class Toast(object):
     def orders(self, column_name=None, bookmark=None):
         business_date = utils.strptime_with_tz(bookmark).strftime(self.fmt_date_time)
         
-        start_datetime = utils.strptime_with_tz(business_date).strftime(self.fmt_date_time)
-        end_datetime = datetime.now(pytz.utc).strftime(self.fmt_date_time)
+        format_string = '%Y-%m-%dT%H:%M:%S.000Z'
+        start_datetime = utils.strptime_with_tz(business_date).strftime(format_string)
+        end_datetime = datetime.now(pytz.utc).strftime(format_string)
         page = 1
         has_more = True
         while has_more:
