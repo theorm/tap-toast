@@ -35,7 +35,7 @@ def daterange(start_date, end_date):
 
 class Toast(object):
 
-    def __init__(self, client_id=None, client_secret=None, location_guid=None, management_group_guid=None, start_date=None, auth_with_login=False):
+    def __init__(self, client_id=None, client_secret=None, location_guid=None, management_group_guid=None, start_date=None, auth_with_login=True):
         """ Simple Python wrapper for the Toast API. """
         self.host = 'https://ws-api.toasttab.com/'
         self.client_id = client_id
@@ -98,7 +98,7 @@ class Toast(object):
         if self.auth_with_login:
             return self.get_authorization_token_with_login()
         payload = { 'grant_type': self.grant_type, 'client_id': self.client_id, 'client_secret': self.client_secret }
-        response = requests.post(self._url('authentication/v1/authentication/login'), data=payload)
+        response = requests.post(self._url('usermgmt/v1/oauth/token'), data=payload)
         response.raise_for_status()
         res = response.json()
         logger.info('Authorization successful.')
@@ -106,7 +106,7 @@ class Toast(object):
 
     def get_authorization_token_with_login(self):
         payload = { 'userAccessType': self.user_access_type, 'clientId': self.client_id, 'clientSecret': self.client_secret }
-        response = requests.post(self._url('usermgmt/v1/oauth/token'), data=payload)
+        response = requests.post(self._url('authentication/v1/authentication/login'), data=payload)
         response.raise_for_status()
         res = response.json()
         logger.info('Authorization successful.')
