@@ -93,7 +93,7 @@ def main():
         "location_guid": parsed_args.config['location_guid'],
         "start_date": parsed_args.config['start_date'],
         "management_group_guid": parsed_args.config['management_group_guid'],
-        "auth_with_login": parsed_args.config.get('auth_with_login', False)
+        "auth_with_login": parsed_args.config.get('auth_with_login', True)
     }
 
     client = Toast(**creds)
