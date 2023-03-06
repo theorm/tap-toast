@@ -106,7 +106,7 @@ class Toast(object):
 
     def get_authorization_token_with_login(self):
         payload = { 'userAccessType': self.user_access_type, 'clientId': self.client_id, 'clientSecret': self.client_secret }
-        response = requests.post(self._url('authentication/v1/authentication/login'), data=payload)
+        response = requests.post(self._url('authentication/v1/authentication/login'), json=payload, headers={ 'Content-Type': 'application/json' })
         response.raise_for_status()
         res = response.json()
         logger.info('Authorization successful.')
