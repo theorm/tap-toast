@@ -17,7 +17,8 @@ REQUIRED_CONFIG_KEYS = [
     "client_secret",
     "location_guid",
     "start_date",
-    "management_group_guid"
+    "management_group_guid",
+    "auth_with_login"
 ]
 
 
