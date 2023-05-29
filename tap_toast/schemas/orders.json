@@ -10,6 +10,12 @@
         "string"
       ]
     },
+    "externalId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "openedDate": {
       "type": [
         "null",
@@ -18,6 +24,13 @@
       "format": "date-time"
     },
     "modifiedDate": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "promisedDate": {
       "type": [
         "null",
         "string"
@@ -36,6 +49,12 @@
         ],
         "properties": {
           "guid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "externalId": {
             "type": [
               "null",
               "string"
@@ -202,13 +221,31 @@
               "number"
             ]
           },
+          "netAmount": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
           "taxAmount": {
             "type": [
               "null",
               "number"
             ]
           },
+          "tipAmount": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
           "totalAmount": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "totalDiscountAmount": {
             "type": [
               "null",
               "number"
@@ -309,6 +346,12 @@
       "format": "date-time"
     },
     "deleted": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "createdInTestMode": {
       "type": [
         "null",
         "boolean"
