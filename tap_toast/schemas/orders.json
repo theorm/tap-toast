@@ -129,6 +129,12 @@
                     "number"
                   ]
                 },
+                "preDiscountPrice": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
                 "tax": {
                   "type": [
                     "null",
@@ -263,6 +269,56 @@
               "null",
               "string"
             ]
+          },
+          "appliedDiscounts": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "properties": {
+              "guid": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "name": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "discountAmount": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              },
+              "nonTaxDiscountAmount": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              },
+              "discountType": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "discountPercent": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "appliedPromoCode": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            }
           },
           "paidDate": {
             "type": [
