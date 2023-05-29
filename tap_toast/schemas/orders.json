@@ -273,50 +273,56 @@
           "appliedDiscounts": {
             "type": [
               "null",
-              "object"
+              "array"
             ],
-            "properties": {
-              "guid": {
-                "type": [
-                  "null",
-                  "string"
-                ]
-              },
-              "name": {
-                "type": [
-                  "null",
-                  "string"
-                ]
-              },
-              "discountAmount": {
-                "type": [
-                  "null",
-                  "number"
-                ]
-              },
-              "nonTaxDiscountAmount": {
-                "type": [
-                  "null",
-                  "number"
-                ]
-              },
-              "discountType": {
-                "type": [
-                  "null",
-                  "string"
-                ]
-              },
-              "discountPercent": {
-                "type": [
-                  "null",
-                  "string"
-                ]
-              },
-              "appliedPromoCode": {
-                "type": [
-                  "null",
-                  "string"
-                ]
+            "items": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "properties": {
+                "guid": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "name": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "discountAmount": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "nonTaxDiscountAmount": {
+                  "type": [
+                    "null",
+                    "number"
+                  ]
+                },
+                "discountType": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "discountPercent": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "appliedPromoCode": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
               }
             }
           },
