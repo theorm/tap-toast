@@ -322,6 +322,12 @@
                     "null",
                     "string"
                   ]
+                },
+                "processingState": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
                 }
               }
             }
