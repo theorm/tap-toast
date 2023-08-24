@@ -174,31 +174,31 @@ class Toast(object):
 
 
     def alternate_payment_types(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/alternatePaymentTypes'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/alternatePaymentTypes'))
         for item in res:
             yield item
 
 
     def break_types(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/breakTypes'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/breakTypes'))
         for item in res:
             yield item
 
 
     def cash_drawers(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/cashDrawers'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/cashDrawers'))
         for item in res:
             yield item
 
 
     def dining_options(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/diningOptions'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/diningOptions')e)
         for item in res:
             yield item
 
 
     def discounts(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/discounts'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/discounts'))
         for item in res:
             yield item
 
@@ -216,97 +216,97 @@ class Toast(object):
 
 
     def menu_option_groups(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/menuOptionGroups'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/menuOptionGroups')e)
         for item in res:
             yield item
 
 
     def menus(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/menus'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/menus'))
         for item in res:
             yield item
 
 
     def no_sale_reasons(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/noSaleReasons'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/noSaleReasons'))
         for item in res:
             yield item
 
 
     def payout_reasons(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/payoutReasons'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/payoutReasons'))
         for item in res:
             yield item
 
 
     def premodifier_groups(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/preModifierGroups'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/preModifierGroups'))
         for item in res:
             yield item
 
 
     def premodifiers(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/preModifiers'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/preModifiers'))
         for item in res:
             yield item
 
 
     def price_groups(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/priceGroups'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/priceGroups'))
         for item in res:
             yield item
 
 
     def printers(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/printers'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/printers'))
         for item in res:
             yield item
 
 
     def restaurant_services(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/restaurantServices'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/restaurantServices'))
         for item in res:
             yield item
 
 
     def revenue_centers(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/revenueCenters'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/revenueCenters'))
         for item in res:
             yield item
 
 
     def sales_categories(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/salesCategories'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/salesCategories'))
         for item in res:
             yield item
 
 
     def service_areas(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/serviceAreas'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/serviceAreas'))
         for item in res:
             yield item
 
 
     def tables(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/tables'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/tables'))
         for item in res:
             yield item
 
 
     def tax_rates(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/taxRates'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/taxRates'))
         for item in res:
             yield item
 
 
     def tip_withholding(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/tipWithholding'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/tipWithholding'))
         for item in res:
             yield item
 
 
     def void_reasons(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/voidReasons'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/voidReasons'))
         for item in res:
             yield item
 
