@@ -204,13 +204,13 @@ class Toast(object):
 
 
     def menu_groups(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/menuGroups'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/menuGroups')) # pageSize not supported anymore
         for item in res:
             yield item
 
 
     def menu_items(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/menuItems'), pageSize=self.default_page_size)
+        res = self._get(self._url('config/v2/menuItems')) # pageSize not supported anymore
         for item in res:
             yield item
 
