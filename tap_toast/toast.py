@@ -192,7 +192,7 @@ class Toast(object):
 
 
     def dining_options(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/diningOptions')e)
+        res = self._get(self._url('config/v2/diningOptions'))
         for item in res:
             yield item
 
@@ -216,7 +216,7 @@ class Toast(object):
 
 
     def menu_option_groups(self, column_name=None, bookmark=None):
-        res = self._get(self._url('config/v2/menuOptionGroups')e)
+        res = self._get(self._url('config/v2/menuOptionGroups'))
         for item in res:
             yield item
 
